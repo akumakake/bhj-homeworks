@@ -17,26 +17,20 @@ class Game {
   }
 
   registerEvents() {
-    registerEvents() {
-  document.addEventListener('keydown', (event) => {
-    const currentSymbolElement = this.currentSymbol;
-    
-    if (!currentSymbolElement) {
-      return;
-    }
-    
-    const pressedKey = event.key;
-    
-    const currentSymbolText = currentSymbolElement.textContent.toLowerCase();
-    const pressedKeyLower = pressedKey.toLowerCase();
-    
-    if (currentSymbolText === pressedKeyLower) {
-      this.success();
-    } else {
-      this.fail();
-    }
-  });
-}
+    document.addEventListener('keydown', (event) => {
+      if (!this.currentSymbol) {
+        return;
+      }
+      
+      const pressedKey = event.key.toLowerCase();
+      const currentSymbolText = this.currentSymbol.textContent.toLowerCase();
+      
+      if (pressedKey === currentSymbolText) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    });
   }
 
   success() {
