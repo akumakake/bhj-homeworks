@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    const textColorControls = document.querySelectorAll('.text_color');
+    const textColorControls = document.querySelectorAll('[data-text-color]');
     textColorControls.forEach(control => {
         control.addEventListener('click', function(e) {
             e.preventDefault();
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    const bgColorControls = document.querySelectorAll('.bg_color');
+    const bgColorControls = document.querySelectorAll('[data-bg-color]');
     bgColorControls.forEach(control => {
         control.addEventListener('click', function(e) {
             e.preventDefault();
